@@ -6,13 +6,14 @@ public class attackEnemy : MonoBehaviour
 {
     public GameObject player;
     public GameObject bulletPrefab;
+    private GameObject playerSprite;
     private Vector3 target;
     private float bulletSpeed = 20.0f;
     private float playerSpeed = 10.0f;
     
     void Start()
     {
-        
+        playerSprite = GameObject.Find("PlayerSprite");
     }
 
     void Update()
@@ -20,7 +21,7 @@ public class attackEnemy : MonoBehaviour
         target = transform.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, transform.position.z));
         Vector3 difference = target - player.transform.position;
         float rotationZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
-        //player.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ);
+        playerSprite.transform.rotation = Quaternion.Euler(0.0f, 0.0f, rotationZ-90f);
 
         if (Input.GetMouseButtonDown(0))
         {
