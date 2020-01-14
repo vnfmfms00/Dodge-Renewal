@@ -40,7 +40,7 @@ public class EnemyController : MonoBehaviour
             collided_cnt += 1;
         }
 
-        if(collided_cnt >= 2 || collision.gameObject.CompareTag("Player"))
+        if(collided_cnt >= 2 || collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Bullet"))
         {
             Destroy(this.gameObject);
             totalEnemy_cnt--;

@@ -20,4 +20,12 @@ public class bulletProperties : MonoBehaviour
             Destroy(bullet);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(this.gameObject);
+        }
+    }
 }
