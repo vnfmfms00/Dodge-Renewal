@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class Respawn : MonoBehaviour
 {
     float time = 0f;
-    int cnt = 0;
     float gameTime;
     public GameObject prefab;
     Text score;
@@ -28,12 +27,13 @@ public class Respawn : MonoBehaviour
         {
             time -= 1.0f;       // 1초를 빼고
             respawnMissile();   // respawnMissile() 이라는 함수를 호출합니다.
-            cnt++;              // 미사일이 추가될 때 마다 카운트를 올립니다.
+            EnemyController.totalEnemy_cnt++;              // 미사일이 추가될 때 마다 카운트를 올립니다.
         }
 
-        score.text = "Enemy Count : " + cnt.ToString();    // 리스폰시 사용하는 카운트를 연결
+        score.text = "Enemy Count : " + EnemyController.totalEnemy_cnt.ToString();    // 리스폰시 사용하는 카운트를 연결
         timeRecord.text = "Time : " + gameTime.ToString("N2");   // 제한 시간을 연결합니다. N2는 소숫점 둘째짜리까지 출력
         gameTime += Time.deltaTime;     // 실시간으로 증가시킵니다.
+
     }
 
     void respawnMissile()
@@ -67,5 +67,7 @@ public class Respawn : MonoBehaviour
     void newUnit(float x, float y)
     {
         Instantiate(prefab, new Vector3(x, y, 0), Quaternion.identity);
+        
     }
+
 }
