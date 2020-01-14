@@ -245,8 +245,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 201eb166bbc9a54408edf4a3f20c8791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ecScript: {fileID: 3876790449162086441, guid: b0eb23c198783e447a6ef65bd02ff7a4,
-    type: 3}
   prefab: {fileID: 686343418971178625, guid: b0eb23c198783e447a6ef65bd02ff7a4, type: 3}
 --- !u!1 &508882837
 GameObject:
@@ -336,6 +334,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -351,6 +350,21 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!114 &519420030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfad3aa0df796684aad5ade334c87bbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1929077528}
+  bulletPrefab: {fileID: 3370865156856525369, guid: 41d4cb1231d7c4a4aa94f0db3eda0000,
+    type: 3}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -814,6 +828,7 @@ GameObject:
   - component: {fileID: 1929077531}
   - component: {fileID: 1929077530}
   - component: {fileID: 1929077529}
+  - component: {fileID: 1929077533}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -932,3 +947,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1929077533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929077528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17c10572942127841a38217d389c1bb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
