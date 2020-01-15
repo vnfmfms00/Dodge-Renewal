@@ -22,12 +22,17 @@ public class Respawn : MonoBehaviour
     void Update()
     {
         time += Time.deltaTime;
-        // 실시간 시간을 더합니다.
-        if (time > 1.0)  // 만약 1초가 지났다면,
+
+        //10초 동안만 생성
+        if(gameTime <= 20f)
         {
-            time -= 1.0f;       // 1초를 빼고
-            respawnMissile();   // respawnMissile() 이라는 함수를 호출합니다.
-            EnemyController.totalEnemy_cnt++;              // 미사일이 추가될 때 마다 카운트를 올립니다.
+            // 실시간 시간을 더합니다.
+            if (time > 1.0f)  // 만약 1초가 지났다면,
+            {
+                time -= 1.0f;       // 1초를 빼고
+                respawnMissile();   // respawnMissile() 이라는 함수를 호출합니다.
+                EnemyController.totalEnemy_cnt++;              // 미사일이 추가될 때 마다 카운트를 올립니다.
+            }
         }
 
         score.text = "Enemy Count : " + EnemyController.totalEnemy_cnt.ToString();    // 리스폰시 사용하는 카운트를 연결
